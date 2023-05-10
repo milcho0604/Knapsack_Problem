@@ -20,8 +20,8 @@ public class Main_202014036 {
 		int[][] dp = new int[n + 1][k + 1];
 
 		// 생성한 배열 dp를 채운다.
-		for (int i = 0; i <= n; i++) { // i번째까지의 물건.
-			for (int j = 0; j <= k; j++) { // 베낭의 수용량.
+		for (int i = 1; i <= n; i++) { // i번째까지의 물건.
+			for (int j = 1; j <= k; j++) { // 베낭의 수용량.
 				if (kA[i - 1] > j) { // i번째의 물건이 베낭에 들어가지 않는 경우.
 					dp[i][j] = dp[i - 1][j]; // 베낭의 가치를 선정할 수 있는 최대 가치로 유지한다.
 				} else { // 반대로, i번째 물건이 배낭에 들어갈 수 있는 경우.
@@ -46,7 +46,6 @@ public class Main_202014036 {
 			R--; // 다음 물건으로 이동. ex) 물건이 7개면 7번째 물건을 마치고 6번째 물건으로 이동.
 		}
 		// 최대 가치 출력.
-		System.out.println("\n최대 가치 = " + dp[n][KG]);
-
+		System.out.println("\n최대 가치 = " + dp[n][k]);
 	}
 }
